@@ -27,3 +27,8 @@ steps:
     appType: 'webApp'
     WebAppName: 'devsystemapp'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: '/home/vsts/work/1/s/memoryref/target/memoryref-0.0.2-SNAPSHOT-shaded.jar'
+    publishLocation: 'Container'
